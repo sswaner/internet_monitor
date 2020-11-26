@@ -12,7 +12,7 @@ class HostnameFilter(logging.Filter):
         return True
 
 log_format = logging.Formatter('%(asctime)s - %(levelname)s - %(hostname)s - %(message)s')
-handler = logging.FileHandler('netscan.log')
+handler = logging.FileHandler('/var/log/internet_monitor.log')
 handler.addFilter(HostnameFilter())
 handler.setFormatter(log_format)
 sh = logging.StreamHandler()
